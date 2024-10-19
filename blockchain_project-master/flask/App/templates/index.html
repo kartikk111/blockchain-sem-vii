@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Add Student Record</h2>
+<form method="POST">
+    <div class="mb-3">
+        <label for="student" class="form-label">Student Name</label>
+        <input type="text" class="form-control" id="student" name="student" required>
+    </div>
+    <div class="mb-3">
+        <label for="lesson" class="form-label">Lesson</label>
+        <input type="text" class="form-control" id="lesson" name="lesson" required>
+    </div>
+    <div class="mb-3">
+        <label for="mark" class="form-label">Grade</label>
+        <input type="text" class="form-control" id="mark" name="mark" required>
+    </div>
+    <div class="mb-3">
+        <label for="date" class="form-label">Date</label>
+        <input type="date" class="form-control" id="date" name="date" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
