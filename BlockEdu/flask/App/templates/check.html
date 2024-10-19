@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Blockchain Integrity Check Results</h2>
+{% for student, checks in results.items() %}
+    <h3>{{ student }}</h3>
+    {% if checks %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Block</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for check in checks %}
+                    <tr>
+                        <td>{{ check.Block }}</td>
+                        <td>
+                            {% if check.Result == 'All is good' %}
+                                <span class="text-success">{{ check.Result }}</span>
+                            {% else %}
+                                <span class="text-danger">{{ check.Result }}</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No blocks to check for this student.</p>
+    {% endif %}
+{% endfor %}
+{% endblock %}
